@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Register</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.name.label }}
+        {{ form.name(size=32) }}
+    </p>
+    <br>
+    <p>
+        {{ form.email.label }}
+        {{ form.email(size=32) }}
+    </p>
+    <br>
+    <p>
+        {{ form.password.label }}
+        {{ form.password(size=32) }}
+    </p>
+    <br>
+    <p>
+        {{ form.confirm_password.label }}
+        {{ form.confirm_password(size=32) }}
+    </p>
+    <br>
+    <p>
+        {{ form.role.label }}
+        {{ form.role() }}
+    </p>
+    <br>
+    <p>
+        {{ form.submit(class_="btn") }}
+    </p>
+    
+</form>
+
+{% endblock %}
+
+
+
+
+

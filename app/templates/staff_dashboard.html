@@ -1,0 +1,26 @@
+{% extends "dashboard_base.html" %}
+
+{% block sidebar_links %}
+
+<a href="{{ url_for('main.staff_dashboard') }}">Overview</a>
+<a href="#">Register Patient</a>
+<a href="#">Update Records</a>
+<a href="#">Inventory</a>
+<a href="#">AI Recommendations</a>
+<a href="#">View Records</a>
+
+{% endblock %}
+
+{% block content %}
+
+<h2>Staff Dashboard</h2>
+<p>Welcome, {{ user.name }} (Staff)</p>
+<p>
+    Here you can register patients, update records, and view AI recommendations.
+</p>
+
+{% endblock %}
+
+
+
+

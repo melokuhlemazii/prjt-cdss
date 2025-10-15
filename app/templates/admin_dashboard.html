@@ -1,0 +1,24 @@
+{% extends "dashboard_base.html" %}
+
+{% block sidebar_links %}
+
+<a href="{{ url_for('main.admin_dashboard') }}">Overview</a>
+<a href="#">Manage Staff</a>
+<a href="#">Inventory</a>
+<a href="#">Operations</a>
+
+{% endblock %}
+
+{% block content %}
+
+<h2>Admin Dashboard</h2>
+<p>Welcome, {{ user.name }} (Admin) </p>
+<p>
+    Here you can manage staff, monitor stock, and oversee operations
+</p>
+
+{% endblock %}
+
+
+
+

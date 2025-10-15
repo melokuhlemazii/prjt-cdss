@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>MediClinic</title>
+</head>
+<body>
+    <header style="position:fixed; top:0; left:0; width:100vw; background:rgba(255,255,255,0.97); color:#0d6efd; display:flex; align-items:center; justify-content:space-between; padding:0 40px; height:70px; z-index:1000; box-shadow:0 2px 12px rgba(0,0,0,0.07);">
+        <div style="flex:1; display:flex; align-items:center;">
+            <h1 style="font-size:2.2rem; font-weight:800; margin:0; color:#0d6efd;">MediClinic</h1>
+        </div>
+        <nav style="display:flex; gap:32px; align-items:center;">
+            <a href="{{ url_for('auth.login') }}" class="nav-btn" style="background:#0d6efd; color:white; font-weight:600; border:none; border-radius:6px; padding:10px 22px; text-decoration:none; box-shadow:0 1px 4px rgba(0,0,0,0.04); transition:background 0.2s;">Login</a>
+            <a href="{{ url_for('auth.register') }}" class="nav-btn" style="background:#ff6f61; color:white; font-weight:600; border:none; border-radius:6px; padding:10px 22px; text-decoration:none; box-shadow:0 1px 4px rgba(0,0,0,0.04); transition:background 0.2s;">Register</a>
+        </nav>
+    </header>
+    <main style="margin-top:70px;">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer style="background:#f8f9fa; color:#222; display:flex; align-items:center; justify-content:space-between; padding:0 40px; height:60px; margin-top:40px;">
+        <p style="margin:0; font-weight:600;">&copy; 2025 MediClinic</p>
+        <div style="display:flex; gap:24px;">
+            <a href="{{ url_for('auth.login') }}" style="color:#0d6efd; text-decoration:none; font-weight:600; padding:8px 20px; border-radius:4px; transition:background 0.2s;">Login</a>
+            <a href="{{ url_for('auth.register') }}" style="color:#0d6efd; text-decoration:none; font-weight:600; padding:8px 20px; border-radius:4px; transition:background 0.2s;">Register</a>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
