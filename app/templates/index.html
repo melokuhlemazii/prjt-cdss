@@ -2,151 +2,39 @@
 {% extends "base.html" %}
 
 {% block content %}
-<style>
-.hero-section {
-    position: relative;
-    width: 100vw;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: url('{{ url_for('static', filename='images/doctor.jpg') }}') center center/cover no-repeat;
-}
 
-.hero-content {
-    color: white;
-    text-align: left;
-    max-width: 700px;
-    margin-left: 5vw;
-}
 
-.hero-content h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-}
-
-.hero-content h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.hero-content p {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-    align-self: flex-start;
-}
-
-.hero-buttons {
-    margin-bottom: 2rem;
-    display: flex;
-    gap: 16px;
-    align-self: flex-start;
-}
-
-.hero-btn {
-    padding: 12px 32px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    color: white;
-}
-
-.hero-btn.login {
-    background: #0d6efd;
-}
-
-.hero-btn.register {
-    background: #6c757d;
-}
-
-.about-section {
-    background: #f5f8fc;
-    padding: 60px 0;
-}
-
-.about-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.about-card {
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-    padding: 32px;
-    width: 340px;
-    text-align: center;
-}
-
-.about-icon {
-    font-size: 2.5rem;
-    margin-bottom: 16px;
-}
-
-.about-icon.patient {
-    color: #38c172;
-}
-
-.about-icon.ai {
-    color: #0d6efd;
-}
-
-.about-icon.analytics {
-    color: #ffc107;
-}
-
-.about-card h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.about-subtitle {
-    color: #6c757d;
-    font-size: 1.1rem;
-    margin-bottom: 16px;
-}
-
-.about-description {
-    color: #6c757d;
-}
-</style>
-
-<section class="hero-section">
-    <div class="hero-content">
-        <h1>Advanced Mobile Clinic Recommendation System</h1>
-        <h2>for Healthcare Professionals</h2>
-        <p>Feasibility, Sustainability and Policy Considerations<br>#MediClinic2025</p>
-        <div class="hero-buttons">
-            <a href="{{ url_for('auth.login') }}" class="hero-btn login">Login</a>
-            <a href="{{ url_for('auth.register') }}" class="hero-btn register">Register</a>
+<section class="relative w-full min-h-screen flex items-center justify-start bg-gradient-to-br from-blue-600 via-blue-400 to-blue-200">
+    <div class="text-white text-left max-w-2xl ml-6 sm:ml-12 md:ml-20 lg:ml-32 px-4 py-20">
+        <h1 class="text-5xl md:text-6xl font-black mb-4 leading-tight drop-shadow-lg">Advanced Mobile Clinic Recommendation System</h1>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 drop-shadow">for Healthcare Professionals</h2>
+        <p class="text-xl md:text-2xl mb-8 leading-relaxed drop-shadow"> <br><span class="font-semibold"> </span></p>
+        <div class="flex gap-4 mb-8 justify-start">
+            <a href="{{ url_for('auth.login') }}" class="bg-white text-blue-700 font-semibold rounded-lg px-8 py-4 no-underline hover:bg-blue-100 transition-colors shadow-lg border border-blue-200">Login</a>
+            <a href="{{ url_for('auth.register') }}" class="bg-blue-700 text-white font-semibold rounded-lg px-8 py-4 no-underline hover:bg-blue-800 transition-colors shadow-lg border border-blue-800">Register</a>
         </div>
     </div>
 </section>
 
-<section class="about-section">
-    <div class="about-container">
-        <div class="about-card">
-            <div class="about-icon patient">&#128100;</div>
-            <h2>Patient Management</h2>
-            <p class="about-subtitle">Comprehensive patient intake and tracking system</p>
-            <p class="about-description">Streamline patient registration, vital signs recording, and symptom tracking with our intuitive interface.</p>
+<section class="bg-blue-50 py-16 px-4">
+    <div class="flex justify-center gap-10 flex-wrap max-w-7xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-lg p-8 w-80 text-center transform hover:scale-105 transition-transform">
+            <div class="text-4xl text-green-500 mb-4">&#128100;</div>
+            <h2 class="text-2xl font-bold mb-2 text-gray-800">Patient Management</h2>
+            <p class="text-gray-600 text-lg mb-4">Comprehensive patient intake and tracking system</p>
+            <p class="text-gray-600">Streamline patient registration, vital signs recording, and symptom tracking with our intuitive interface.</p>
         </div>
-        <div class="about-card">
-            <div class="about-icon ai">&#128300;</div>
-            <h2>AI Recommendations</h2>
-            <p class="about-subtitle">Intelligent clinical decision support system</p>
-            <p class="about-description">Get instant, evidence-based recommendations for patient care based on symptoms and vital signs.</p>
+        <div class="bg-white rounded-2xl shadow-lg p-8 w-80 text-center transform hover:scale-105 transition-transform">
+            <div class="text-4xl text-blue-600 mb-4">&#128300;</div>
+            <h2 class="text-2xl font-bold mb-2 text-gray-800">AI Recommendations</h2>
+            <p class="text-gray-600 text-lg mb-4">Intelligent clinical decision support system</p>
+            <p class="text-gray-600">Get instant, evidence-based recommendations for patient care based on symptoms and vital signs.</p>
         </div>
-        <div class="about-card">
-            <div class="about-icon analytics">&#128202;</div>
-            <h2>Analytics Dashboard</h2>
-            <p class="about-subtitle">Comprehensive healthcare analytics and insights</p>
-            <p class="about-description">Monitor trends, track outcomes, and make data-driven decisions with advanced analytics tools.</p>
+        <div class="bg-white rounded-2xl shadow-lg p-8 w-80 text-center transform hover:scale-105 transition-transform">
+            <div class="text-4xl text-yellow-500 mb-4">&#128202;</div>
+            <h2 class="text-2xl font-bold mb-2 text-gray-800">Analytics Dashboard</h2>
+            <p class="text-gray-600 text-lg mb-4">Comprehensive healthcare analytics and insights</p>
+            <p class="text-gray-600">Monitor trends, track outcomes, and make data-driven decisions with advanced analytics tools.</p>
         </div>
     </div>
 </section>

@@ -2,162 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or "Dashboard" }}</title>
-    <style>
-        body {
-            display: flex;
-            margin: 0;
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-        }
-        .sidebar {
-            width: 290px;
-            background: #fff;
-            color: #222;
-            display: flex;
-            flex-direction: column;
-            padding: 32px 0 24px 0;
-            border-right: 1px solid #eee;
-            min-height: 100vh;
-        }
-        .sidebar-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 32px;
-        }
-        .sidebar-header .icon {
-            background: #0d6efd;
-            color: #fff;
-            font-size: 2.2rem;
-            border-radius: 16px;
-            padding: 16px;
-            margin-bottom: 8px;
-        }
-        .sidebar-header .title {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 2px;
-        }
-        .sidebar-header .subtitle {
-            font-size: 1rem;
-            color: #6c757d;
-        }
-        .sidebar-links {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-bottom: 32px;
-        }
-        .sidebar-links a {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1.15rem;
-            color: #6c757d;
-            text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: background 0.2s, color 0.2s;
-        }
-        .sidebar-links a.active, .sidebar-links a:hover {
-            background: #0d6efd;
-            color: #fff;
-        }
-        .sidebar-links a .icon {
-            font-size: 1.3rem;
-        }
-        .sidebar-activity {
-            background: #f5f8fc;
-            border-radius: 16px;
-            padding: 18px 24px;
-            margin: 0 24px 32px 24px;
-            font-size: 1.1rem;
-        }
-        .sidebar-activity .icon {
-            color: #0d6efd;
-            margin-right: 8px;
-        }
-        .sidebar-activity-title {
-            font-weight: 700;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
-        .sidebar-activity-list {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        .sidebar-activity-list li {
-            display: flex;
-            justify-content: space-between;
-            color: #6c757d;
-            margin-bottom: 4px;
-        }
-        .logout {
-            margin-top: auto;
-            text-align: center;
-            padding: 0 24px;
-        }
-        .logout-btn {
-            background: #ff6f61;
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            padding: 12px 0;
-            width: 100%;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            margin-top: 12px;
-            transition: background 0.2s;
-        }
-        .logout-btn:hover {
-            background: #e85c50;
-        }
-        .main-content {
-            flex-grow: 1;
-            background-color: #f8f9fa;
-            padding: 30px;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <span class="icon">&#128300;</span>
-            <span class="title">MediClinic</span>
-            <span class="subtitle">Mobile Operations</span>
+<body class="flex m-0 min-h-screen font-sans">
+    <div class="w-72 bg-white text-gray-800 flex flex-col py-8 border-r border-gray-200 min-h-screen">
+        <div class="flex flex-col items-center mb-8 px-6">
+            <span class="bg-blue-600 text-white text-4xl rounded-2xl p-4 mb-2">&#128300;</span>
+            <span class="text-2xl font-black">MediClinic</span>
+            <span class="text-gray-500 text-base">Mobile Operations</span>
         </div>
-        <div class="sidebar-links">
+        <div class="flex flex-col gap-2 mb-8 px-6">
             {% block sidebar_links %}
             {% endblock %}
         </div>
-        <div class="sidebar-activity">
-            <div class="sidebar-activity-title"><span class="icon">&#128100;</span> Today's Activity</div>
-            <ul class="sidebar-activity-list">
-                <li><span>Patients Seen</span> <span>12</span></li>
-                <li><span>Pending</span> <span>3</span></li>
+        <div class="bg-blue-50 rounded-2xl p-6 mx-6 mb-8">
+            <div class="font-bold mb-2 flex items-center">
+                <span class="text-blue-600 mr-2">&#128100;</span> 
+                Today's Activity
+            </div>
+            <ul class="list-none m-0 p-0">
+                <li class="flex justify-between text-gray-600 mb-1">
+                    <span>Patients Seen</span> 
+                    <span class="font-semibold">12</span>
+                </li>
+                <li class="flex justify-between text-gray-600">
+                    <span>Pending</span> 
+                    <span class="font-semibold">3</span>
+                </li>
             </ul>
         </div>
-        <div class="logout">
+        <div class="mt-auto text-center px-6">
             <form action="{{ url_for('auth.logout') }}" method="post">
-                <button type="submit" class="logout-btn">Logout</button>
+                <button type="submit" class="bg-red-500 text-white border-none rounded-lg py-3 w-full text-lg font-bold cursor-pointer hover:bg-red-600 transition-colors">
+                    Logout
+                </button>
             </form>
         </div>
     </div>
 
-    <div class="main-content">
+    <div class="flex-1 bg-gray-50 p-8">
         {% block content %}
-
 
 
         {% endblock %}
     </div>
 </body>
-</html>
+
 
 
 

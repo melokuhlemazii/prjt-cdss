@@ -26,3 +26,6 @@ def staff_dashboard():
         flash('Access denied: Staff only.', 'danger')
         return redirect(url_for('auth.login'))
     return render_template("staff_dashboard.html", user=current_user)
+
+
+

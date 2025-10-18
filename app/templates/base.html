@@ -2,28 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MediClinic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <header style="position:fixed; top:0; left:0; width:100vw; background:rgba(255,255,255,0.97); color:#0d6efd; display:flex; align-items:center; justify-content:space-between; padding:0 40px; height:70px; z-index:1000; box-shadow:0 2px 12px rgba(0,0,0,0.07);">
-        <div style="flex:1; display:flex; align-items:center;">
-            <h1 style="font-size:2.2rem; font-weight:800; margin:0; color:#0d6efd;">MediClinic</h1>
+<body class="font-sans">
+    <header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm text-blue-600 flex items-center justify-between px-10 h-16 z-50 shadow-lg">
+        <div class="flex-1 flex items-center">
+            <h1 class="text-3xl font-black text-blue-600">MediClinic</h1>
         </div>
-        <nav style="display:flex; gap:32px; align-items:center;">
-            <a href="{{ url_for('auth.login') }}" class="nav-btn" style="background:#0d6efd; color:white; font-weight:600; border:none; border-radius:6px; padding:10px 22px; text-decoration:none; box-shadow:0 1px 4px rgba(0,0,0,0.04); transition:background 0.2s;">Login</a>
-            <a href="{{ url_for('auth.register') }}" class="nav-btn" style="background:#ff6f61; color:white; font-weight:600; border:none; border-radius:6px; padding:10px 22px; text-decoration:none; box-shadow:0 1px 4px rgba(0,0,0,0.04); transition:background 0.2s;">Register</a>
+        <nav class="flex gap-8 items-center">
+            <a href="{{ url_for('auth.login') }}" class="bg-blue-600 text-white font-semibold rounded-lg px-6 py-3 no-underline shadow-sm hover:bg-blue-700 transition-colors">Login</a>
+            <a href="{{ url_for('auth.register') }}" class="bg-red-500 text-white font-semibold rounded-lg px-6 py-3 no-underline shadow-sm hover:bg-red-600 transition-colors">Register</a>
         </nav>
     </header>
-    <main style="margin-top:70px;">
+    <main class="mt-16">
         {% block content %}
         {% endblock %}
     </main>
-    <footer style="background:#f8f9fa; color:#222; display:flex; align-items:center; justify-content:space-between; padding:0 40px; height:60px; margin-top:40px;">
-        <p style="margin:0; font-weight:600;">&copy; 2025 MediClinic</p>
-        <div style="display:flex; gap:24px;">
-            <a href="{{ url_for('auth.login') }}" style="color:#0d6efd; text-decoration:none; font-weight:600; padding:8px 20px; border-radius:4px; transition:background 0.2s;">Login</a>
-            <a href="{{ url_for('auth.register') }}" style="color:#0d6efd; text-decoration:none; font-weight:600; padding:8px 20px; border-radius:4px; transition:background 0.2s;">Register</a>
+    <footer class="bg-gray-50 text-gray-800 flex items-center justify-between px-10 h-15 mt-10">
+        <p class="m-0 font-semibold">&copy; 2025 MediClinic</p>
+        <div class="flex gap-6">
+            <a href="{{ url_for('auth.login') }}" class="text-blue-600 no-underline font-semibold px-5 py-2 rounded hover:bg-gray-100 transition-colors">Login</a>
+            <a href="{{ url_for('auth.register') }}" class="text-blue-600 no-underline font-semibold px-5 py-2 rounded hover:bg-gray-100 transition-colors">Register</a>
         </div>
     </footer>
 </body>

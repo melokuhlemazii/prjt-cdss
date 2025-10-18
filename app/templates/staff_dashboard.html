@@ -1,24 +1,35 @@
 {% extends "dashboard_base.html" %}
 
 {% block sidebar_links %}
-
-<a href="{{ url_for('main.staff_dashboard') }}">Overview</a>
-<a href="#">Register Patient</a>
-<a href="#">Update Records</a>
-<a href="#">Inventory</a>
-<a href="#">AI Recommendations</a>
-<a href="#">View Records</a>
-
+<a href="{{ url_for('main.staff_dashboard') }}" class="flex items-center px-4 py-3 text-gray-700 bg-blue-50 border-r-4 border-blue-500 font-semibold">
+    <span class="mr-3">📊</span> Overview
+</a>
+<a href="#" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-800 transition-colors rounded-lg">
+    <span class="mr-3">➕</span> Register Patient
+</a>
+<a href="#" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-800 transition-colors rounded-lg">
+    <span class="mr-3">📝</span> Update Records
+</a>
+<a href="#" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-800 transition-colors rounded-lg">
+    <span class="mr-3">📦</span> Inventory
+</a>
+<a href="#" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-800 transition-colors rounded-lg">
+    <span class="mr-3">🤖</span> AI Recommendations
+</a>
+<a href="#" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-800 transition-colors rounded-lg">
+    <span class="mr-3">📋</span> View Records
+</a>
 {% endblock %}
 
 {% block content %}
+<div class="max-w-7xl mx-auto">
+    <div class="mb-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-2">Staff Dashboard</h1>
+        <p class="text-lg text-gray-600">Welcome back, <span class="font-semibold text-blue-600">{{ user.name }}</span></p>
+        <p class="text-gray-500">Manage patients, update records, and access AI-powered recommendations</p>
+    </div>
 
-<h2>Staff Dashboard</h2>
-<p>Welcome, {{ user.name }} (Staff)</p>
-<p>
-    Here you can register patients, update records, and view AI recommendations.
-</p>
-
+    
 {% endblock %}
 
 
